@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muhammad Haroon Khan Chitrali | Advocate High Court</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f8f7f3;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 24, 40, 0.97);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4af6a;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d4af6a;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: #0a1828;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 120px 8% 70px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-img {
+            width: 320px;
+            aspect-ratio: 402 / 620;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .eyebrow {
+            color: #d4af6a;
+            letter-spacing: 3px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .title {
+            font-size: 22px;
+            color: #d4af6a;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #d8dee5;
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: #d4af6a;
+            color: #0a1828;
+        }
+
+        .secondary {
+            border: 1px solid #d4af6a;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-label {
+            color: #b08a45;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 42px;
+            color: #0a1828;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            max-width: 850px;
+        }
+
+        .about p {
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* PRACTICE AREAS */
+        .practice {
+            background: #ffffff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: #f8f7f3;
+            padding: 32px;
+            border-top: 3px solid #d4af6a;
+        }
+
+        .card h3 {
+            font-family: Georgia, serif;
+            color: #0a1828;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* EXPERIENCE */
+        .experience {
+            background: #0a1828;
+            color: white;
+        }
+
+        .experience h2 {
+            color: white;
+        }
+
+        .experience-text {
+            max-width: 800px;
+            color: #d8dee5;
+            font-size: 17px;
+        }
+
+        .years {
+            font-family: Georgia, serif;
+            font-size: 70px;
+            color: #d4af6a;
+            margin-top: 25px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #f8f7f3;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0a1828;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #b08a45;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #07121f;
+            color: #9da7b2;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            z-index: 2000;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 7% 70px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-img {
+                width: 220px;
+                aspect-ratio: 402 / 620;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            section {
+                padding: 70px 7%;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">MHKC</div>
+
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#practice">Practice Areas</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Legal Representation & Advocacy
+            </div>
+
+            <h1>
+                Muhammad Haroon Khan Chitrali
+            </h1>
+
+            <div class="title">
+                Advocate High Court
+            </div>
+
+            <p>
+                Providing professional legal representation with
+                a primary focus on criminal law and litigation.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn primary"
+                   href="https://wa.me/923008499920">
+                    WhatsApp
+                </a>
+
+                <a class="btn secondary"
+                   href="tel:+923008499920">
+                    Call Now
+                </a>
+
+            </div>
+
+        </div>
+
+        <img src="lawimage.png.png" alt="Muhammad Haroon Khan Chitrali" class="hero-img">
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-label">
+            About
+        </div>
+
+        <h2>
+            Experienced Legal Advocacy
+        </h2>
+
+        <div class="about">
+
+            <p>
+                Muhammad Haroon Khan Chitrali is an Advocate High Court
+                with 10 years of experience in legal practice.
+                His primary area of expertise is criminal law,
+                providing professional representation and legal
+                assistance to clients.
+            </p>
+
+            <br>
+
+            <p>
+                More information about his professional background,
+                qualifications, experience and notable matters
+                will be added here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE AREAS -->
+    <section class="practice" id="practice">
+
+        <div class="section-label">
+            Practice Areas
+        </div>
+
+        <h2>
+            Areas of Practice
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Criminal Law</h3>
+                <p>
+                    Legal representation and advocacy in criminal
+                    matters and proceedings.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Criminal Defence</h3>
+                <p>
+                    Professional defence and representation
+                    throughout criminal proceedings.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Litigation</h3>
+                <p>
+                    Court representation and legal advocacy
+                    in litigation matters.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+
+        <div class="section-label">
+            Experience
+        </div>
+
+        <h2>
+            A Decade of Legal Practice
+        </h2>
+
+        <p class="experience-text">
+            With 10 years of experience in legal practice,
+            Muhammad Haroon Khan Chitrali provides dedicated
+            legal representation with a focus on criminal law.
+            His detailed professional profile and experience
+            will be added to this section.
+        </p>
+
+        <div class="years">
+            10+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-label">
+            Contact
+        </div>
+
+        <h2>
+            Get in Touch
+        </h2>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <div class="contact-item">
+                    <strong>Office Address</strong>
+
+                    <span>
+                        Flat 22/6, Alfaisal Town, C Block,
+                        Near Askari 9, Zarar Shaheed Road
+                    </span>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Phone / WhatsApp</strong>
+
+                    <a href="tel:+923008499920">
+                        +92 300 8499920
+                    </a>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+
+                    <a href="mailto:dailysecretcrimes07@gmail.com">
+                        dailysecretcrimes07@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+
+                    <a href="https://wa.me/923008499920">
+                        Start a WhatsApp Conversation
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Muhammad Haroon Khan Chitrali — Advocate High Court.
+        All Rights Reserved.
+    </footer>
+
+
+    <!-- FLOATING WHATSAPP -->
+    <a class="whatsapp"
+       href="https://wa.me/923008499920"
+       aria-label="WhatsApp">
+        ☎
+    </a>
+
+</body>
+</html>
