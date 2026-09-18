@@ -3,531 +3,1368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://haroonchitrali.site/">
-<link rel="icon" type="image/png" href="/logo.png.png">
-<title>Muhammad Haroon Khan Chitrali | Advocate High Court</title>  
-<meta property="og:site_name" content="Haroon Chitrali Advocate">
-<meta property="og:url" content="https://haroonchitrali.site/">
-<meta name="description" content="Muhammad Haroon Khan Chitrali is an Advocate High Court in Lahore with many years of legal experience, specializing in criminal law, criminal defence and litigation.">
-<meta name="google-site-verification" content="ZnlDH8jQMWhoMhzJ5xz4nbl1F5G22OYUC1wZg8396gc">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NEGVZ0G0B1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NEGVZ0G0B1');
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Muhammad Haroon Khan",
-  "url": "https://haroonchitrali.site/"
-}
-</script>
+
+    <link rel="canonical" href="https://haroonchitrali.site/">
+    <link rel="icon" type="image/png" href="/logo.png.png">
+
+    <title>Muhammad Haroon Khan Chitrali | Advocate High Court</title>
+
+    <meta property="og:site_name" content="Haroon Chitrali Advocate">
+    <meta property="og:url" content="https://haroonchitrali.site/">
+
+    <meta name="description" content="Muhammad Haroon Khan Chitrali is an Advocate High Court in Lahore with extensive legal experience, specializing in criminal law, criminal defence and litigation.">
+
+    <meta name="google-site-verification" content="ZnlDH8jQMWhoMhzJ5xz4nbl1F5G22OYUC1wZg8396gc">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEGVZ0G0B1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NEGVZ0G0B1');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Muhammad Haroon Khan",
+      "url": "https://haroonchitrali.site/"
+    }
+    </script>
+
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    html {
-        scroll-behavior: smooth;
-    }
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f8f7f3;
-        line-height: 1.6;
-    }
-    /* NAVBAR */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #f8f7f3;
+    line-height: 1.7;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 24, 40, 0.97);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 18px rgba(0,0,0,0.12);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: #d4af6a;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    background: #0a1828;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 125px 8% 80px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-img {
+    width: 320px;
+    aspect-ratio: 402 / 620;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(212,175,106,0.45);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+.eyebrow {
+    color: #d4af6a;
+    letter-spacing: 3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.title {
+    font-size: 22px;
+    color: #d4af6a;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero p {
+    color: #d8dee5;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.primary {
+    background: #d4af6a;
+    color: #0a1828;
+}
+
+.secondary {
+    border: 1px solid #d4af6a;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 95px 8%;
+}
+
+.section-label {
+    color: #b08a45;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    color: #0a1828;
+    margin-bottom: 25px;
+    line-height: 1.15;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    background: #f8f7f3;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.about {
+    max-width: 850px;
+}
+
+.about p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.about-highlight {
+    background: white;
+    border-top: 3px solid #d4af6a;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.about-highlight h3 {
+    font-family: Georgia, serif;
+    color: #0a1828;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.about-detail {
+    padding: 15px 0;
+    border-bottom: 1px solid #e6e3dc;
+}
+
+.about-detail:last-child {
+    border-bottom: none;
+}
+
+.about-detail strong {
+    display: block;
+    color: #0a1828;
+    margin-bottom: 3px;
+}
+
+.about-detail span {
+    color: #666;
+    font-size: 15px;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why {
+    background: white;
+}
+
+.why-intro {
+    max-width: 750px;
+    color: #666;
+    font-size: 17px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.why-card {
+    background: #f8f7f3;
+    padding: 32px;
+    border-top: 3px solid #d4af6a;
+    transition: 0.25s;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+.why-number {
+    font-family: Georgia, serif;
+    color: #d4af6a;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.why-card h3 {
+    font-family: Georgia, serif;
+    color: #0a1828;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* =========================
+   PRACTICE AREAS
+========================= */
+
+.practice {
+    background: #ffffff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #f8f7f3;
+    padding: 32px;
+    border-top: 3px solid #d4af6a;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    color: #0a1828;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #666;
+    font-size: 15px;
+}
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership {
+    background: #f8f7f3;
+}
+
+.membership-box {
+    max-width: 850px;
+    background: #ffffff;
+    padding: 38px;
+    border-left: 4px solid #d4af6a;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.membership-box h3 {
+    font-family: Georgia, serif;
+    color: #0a1828;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.membership-box p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.membership-btn {
+    display: inline-block;
+    background: #0a1828;
+    color: white;
+    padding: 13px 22px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.membership-btn:hover {
+    background: #d4af6a;
+    color: #0a1828;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience {
+    background: #0a1828;
+    color: white;
+}
+
+.experience h2 {
+    color: white;
+}
+
+.experience-layout {
+    display: grid;
+    grid-template-columns: 0.7fr 1.6fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.experience-intro {
+    border-left: 3px solid #d4af6a;
+    padding-left: 25px;
+}
+
+.experience-intro h3 {
+    font-family: Georgia, serif;
+    color: #d4af6a;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.experience-intro p {
+    color: #bfc8d2;
+    font-size: 15px;
+}
+
+.experience-text {
+    color: #d8dee5;
+    font-size: 17px;
+    max-width: 800px;
+}
+
+.experience-text p {
+    margin-bottom: 20px;
+}
+
+.experience-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.experience-point {
+    border: 1px solid rgba(212,175,106,0.25);
+    padding: 20px;
+    background: rgba(255,255,255,0.025);
+}
+
+.experience-point strong {
+    display: block;
+    color: #d4af6a;
+    margin-bottom: 5px;
+}
+
+.experience-point span {
+    color: #c7d0d9;
+    font-size: 14px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #f8f7f3;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    margin-bottom: 28px;
+}
+
+.contact-item strong {
+    display: block;
+    color: #0a1828;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.contact-item span,
+.contact-item a {
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contact-item a:hover {
+    color: #b08a45;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #b08a45 !important;
+    font-weight: bold;
+    font-size: 14px !important;
+}
+
+.contact-box {
+    background: #0a1828;
+    color: white;
+    padding: 35px;
+    border-top: 3px solid #d4af6a;
+}
+
+.contact-box h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: #cbd3dc;
+    margin-bottom: 22px;
+}
+
+.contact-button {
+    display: inline-block;
+    background: #d4af6a;
+    color: #0a1828;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: 0.2s;
+}
+
+.contact-button:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #07121f;
+    color: #9da7b2;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 2000;
+    transition: 0.2s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.07);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
     nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(10, 24, 40, 0.97);
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 15px 5%;
     }
-    .logo {
-        display: flex;
-        align-items: center;
+
+    nav .links {
+        display: none;
     }
-    .logo img {
-        height: 40px;
-        width: auto;
-        display: block;
-    }
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 28px;
-        font-size: 14px;
-    }
-    nav a:hover {
-        color: #d4af6a;
-    }
-    /* HERO */
+
     .hero {
-        min-height: 100vh;
-        background: #0a1828;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 40px;
-        padding: 120px 8% 70px;
-    }
-    .hero-content {
-        max-width: 700px;
-    }
-    .hero-img {
-        width: 320px;
-        aspect-ratio: 402 / 620;
-        height: auto;
-        border-radius: 8px;
-        object-fit: cover;
-        flex-shrink: 0;
-    }
-    .eyebrow {
-        color: #d4af6a;
-        letter-spacing: 3px;
-        font-size: 13px;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-    }
-    h1 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(42px, 6vw, 76px);
-        line-height: 1.05;
-        margin-bottom: 18px;
-    }
-    .title {
-        font-size: 22px;
-        color: #d4af6a;
-        margin-bottom: 20px;
-    }
-    .hero p {
-        color: #d8dee5;
-        font-size: 18px;
-        max-width: 600px;
-        margin-bottom: 35px;
-    }
-    .buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-    .btn {
-        display: inline-block;
-        padding: 14px 25px;
-        border-radius: 3px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.2s;
-    }
-    .primary {
-        background: #d4af6a;
-        color: #0a1828;
-    }
-    .secondary {
-        border: 1px solid #d4af6a;
-        color: white;
-    }
-    .btn:hover {
-        transform: translateY(-2px);
-    }
-    /* SECTIONS */
-    section {
-        padding: 90px 8%;
-    }
-    .section-label {
-        color: #b08a45;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 13px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    h2 {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 42px;
-        color: #0a1828;
-        margin-bottom: 20px;
-    }
-    .about {
-        max-width: 850px;
-    }
-    .about p {
-        font-size: 17px;
-        color: #555;
-    }
-    /* PRACTICE AREAS */
-    .practice {
-        background: #ffffff;
-    }
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-top: 35px;
-    }
-    .card {
-        background: #f8f7f3;
-        padding: 32px;
-        border-top: 3px solid #d4af6a;
-    }
-    .card h3 {
-        font-family: Georgia, serif;
-        color: #0a1828;
-        margin-bottom: 10px;
-        font-size: 22px;
-    }
-    .card p {
-        color: #666;
-    }
-    /* MEMBERSHIP */
-    .membership {
-        background: #f8f7f3;
-    }
-    .membership-box {
-        max-width: 850px;
-        background: #ffffff;
-        padding: 35px;
-        border-left: 4px solid #d4af6a;
-        margin-top: 30px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    }
-    .membership-box h3 {
-        font-family: Georgia, serif;
-        color: #0a1828;
-        font-size: 25px;
-        margin-bottom: 10px;
-    }
-    .membership-box p {
-        color: #666;
-        font-size: 16px;
-        margin-bottom: 22px;
-    }
-    .membership-btn {
-        display: inline-block;
-        background: #0a1828;
-        color: white;
-        padding: 13px 22px;
-        text-decoration: none;
-        border-radius: 3px;
-        font-weight: bold;
-        transition: 0.2s;
-    }
-    .membership-btn:hover {
-        background: #d4af6a;
-        color: #0a1828;
-        transform: translateY(-2px);
-    }
-    /* EXPERIENCE */
-    .experience {
-        background: #0a1828;
-        color: white;
-    }
-    .experience h2 {
-        color: white;
-    }
-    .experience-text {
-        max-width: 800px;
-        color: #d8dee5;
-        font-size: 17px;
-    }
-    .years {
-        font-family: Georgia, serif;
-        font-size: 70px;
-        color: #d4af6a;
-        margin-top: 25px;
-    }
-    /* CONTACT */
-    .contact {
-        background: #f8f7f3;
-    }
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        margin-top: 30px;
-    }
-    .contact-item {
-        margin-bottom: 25px;
-    }
-    .contact-item strong {
-        display: block;
-        color: #0a1828;
-        margin-bottom: 5px;
-    }
-    .contact-item a {
-        color: #555;
-        text-decoration: none;
-    }
-    .contact-item a:hover {
-        color: #b08a45;
-    }
-    /* FOOTER */
-    footer {
-        background: #07121f;
-        color: #9da7b2;
+        padding: 120px 7% 70px;
+        flex-direction: column;
         text-align: center;
-        padding: 25px;
-        font-size: 13px;
+        gap: 35px;
     }
-    /* WHATSAPP */
+
+    .hero-img {
+        width: 220px;
+    }
+
+    section {
+        padding: 75px 7%;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .about-layout,
+    .experience-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .why-grid,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .experience-points {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-box {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-img {
+        width: 200px;
+    }
+
+    .about p,
+    .experience-text,
+    .why-intro {
+        font-size: 16px;
+    }
+
+    .contact-box {
+        padding: 28px;
+    }
+
     .whatsapp {
-        position: fixed;
-        right: 22px;
-        bottom: 22px;
-        width: 58px;
-        height: 58px;
-        background: #25D366;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        font-size: 25px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-        z-index: 2000;
+        width: 54px;
+        height: 54px;
+        right: 17px;
+        bottom: 17px;
     }
-    /* MOBILE */
-    @media (max-width: 800px) {
-        nav {
-            padding: 15px 5%;
-        }
-        nav .links {
-            display: none;
-        }
-        .hero {
-            padding: 120px 7% 70px;
-            flex-direction: column;
-            text-align: center;
-        }
-        .hero-img {
-            width: 220px;
-            aspect-ratio: 402 / 620;
-            height: auto;
-            margin-top: 20px;
-        }
-        section {
-            padding: 70px 7%;
-        }
-        h2 {
-            font-size: 34px;
-        }
-        .cards {
-            grid-template-columns: 1fr;
-        }
-        .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        .membership-box {
-            padding: 28px;
-        }
-    }
+}
+
 </style>
 </head>
+
 <body>
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
     <div class="logo">
         <img src="logo.png.png" alt="MHKC">
     </div>
+
     <div class="links">
         <a href="#about">About</a>
+        <a href="#why">Why Choose Us</a>
         <a href="#practice">Practice Areas</a>
         <a href="#membership">Memberships</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
     </div>
+
 </nav>
-<!-- HERO -->
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
     <div class="hero-content">
+
         <div class="eyebrow">
             Legal Representation & Advocacy
         </div>
+
         <h1>
             Muhammad Haroon Khan Chitrali
         </h1>
+
         <div class="title">
             Advocate High Court
         </div>
+
         <p>
             Providing professional legal representation with
             a primary focus on criminal law and litigation.
         </p>
+
         <div class="buttons">
-            <a class="btn primary"
-               href="https://wa.me/923008499920">
-                WhatsApp
+
+            <a class="btn primary" href="#contact">
+                Free Consultation
             </a>
-            <a class="btn secondary"
-               href="tel:+923008499920">
-                Call Now
-            </a>
+
         </div>
+
     </div>
-    <img src="lawimage.png.png"
-         alt="Muhammad Haroon Khan Chitrali"
-         class="hero-img">
+
+    <img
+        src="lawimage.png.png"
+        alt="Muhammad Haroon Khan Chitrali"
+        class="hero-img">
+
 </section>
-<!-- ABOUT -->
-<section id="about">
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="about-section">
+
     <div class="section-label">
         About
     </div>
+
     <h2>
         Experienced Legal Advocacy
     </h2>
-    <div class="about">
-        <p>
-            Muhammad Haroon Khan Chitrali is an Advocate High Court with extensive experience
-            in legal practice and a strong commitment to professional advocacy. His primary area
-            of expertise is criminal law, where he provides dedicated legal representation, strategic
-            advice, and comprehensive assistance to clients facing a range of legal matters.
 
-            His approach is centred on careful preparation, a thorough understanding of each case,
-            and effective representation before the courts. He is committed to protecting the legal 
-            rights and interests of his clients while providing professional, practical, and considered
-            legal guidance throughout the legal process.
-        </p>
+    <div class="about-layout">
+
+        <div class="about">
+
+            <p>
+                Muhammad Haroon Khan Chitrali is an Advocate High Court
+                with extensive experience in legal practice and a strong
+                commitment to professional advocacy.
+            </p>
+
+            <p>
+                His primary area of expertise is criminal law, where he
+                provides dedicated legal representation, strategic advice,
+                and comprehensive assistance to clients facing a range
+                of legal matters.
+            </p>
+
+            <p>
+                His approach is centred on careful preparation, a thorough
+                understanding of each case, and effective representation
+                before the courts. Each matter is considered on its own
+                circumstances, with attention given to the legal issues,
+                available remedies, and practical requirements of the case.
+            </p>
+
+            <p>
+                The aim is to provide clients with professional,
+                practical, and considered legal guidance while protecting
+                their legal rights and interests throughout the legal process.
+            </p>
+
+        </div>
+
+
+        <div class="about-highlight">
+
+            <h3>
+                Practice Profile
+            </h3>
+
+            <div class="about-detail">
+                <strong>Professional Title</strong>
+                <span>Advocate High Court</span>
+            </div>
+
+            <div class="about-detail">
+                <strong>Primary Focus</strong>
+                <span>Criminal Law & Litigation</span>
+            </div>
+
+            <div class="about-detail">
+                <strong>Practice Location</strong>
+                <span>Lahore, Pakistan</span>
+            </div>
+
+            <div class="about-detail">
+                <strong>Approach</strong>
+                <span>Preparation, advocacy and practical legal guidance</span>
+            </div>
+
+        </div>
+
     </div>
+
 </section>
-<!-- PRACTICE AREAS -->
+
+
+<!-- =========================
+     WHY CHOOSE US
+========================= -->
+
+<section class="why" id="why">
+
+    <div class="section-label">
+        Why Choose Us
+    </div>
+
+    <h2>
+        Professional Representation
+    </h2>
+
+    <p class="why-intro">
+        Legal matters often require careful preparation, clear advice,
+        and effective representation. The practice is focused on providing
+        clients with professional legal assistance tailored to the circumstances
+        of each matter.
+    </p>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-number">
+                01
+            </div>
+
+            <h3>
+                Focused Legal Practice
+            </h3>
+
+            <p>
+                A strong focus on criminal law and litigation, supported
+                by careful consideration of the legal issues involved in
+                each individual case.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-number">
+                02
+            </div>
+
+            <h3>
+                Thorough Preparation
+            </h3>
+
+            <p>
+                Each matter is approached with attention to the facts,
+                applicable law, procedural requirements, and available
+                legal remedies.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-number">
+                03
+            </div>
+
+            <h3>
+                Professional Advocacy
+            </h3>
+
+            <p>
+                Dedicated representation and advocacy before the courts,
+                with a professional approach to every stage of legal
+                proceedings.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-number">
+                04
+            </div>
+
+            <h3>
+                Clear Legal Guidance
+            </h3>
+
+            <p>
+                Practical legal guidance designed to help clients understand
+                their position, available options, and the legal process.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-number">
+                05
+            </div>
+
+            <h3>
+                Client-Focused Approach
+            </h3>
+
+            <p>
+                Legal advice and representation are considered in light
+                of the specific circumstances and requirements of each matter.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-number">
+                06
+            </div>
+
+            <h3>
+                Comprehensive Assistance
+            </h3>
+
+            <p>
+                Assistance across a range of legal matters, from consultation
+                and preparation to representation and litigation before the courts.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRACTICE AREAS
+========================= -->
+
 <section class="practice" id="practice">
+
     <div class="section-label">
         Practice Areas
     </div>
+
     <h2>
         Areas of Practice
     </h2>
+
     <div class="cards">
+
         <div class="card">
             <h3>Criminal Law</h3>
             <p>
                 Legal representation and advocacy in criminal
-                matters and proceedings.
+                matters, including criminal proceedings and
+                related litigation before the courts.
             </p>
         </div>
+
         <div class="card">
             <h3>Criminal Defence</h3>
             <p>
-                Professional defence and representation
-                throughout criminal proceedings.
+                Professional defence and representation in
+                criminal cases, with legal assistance throughout
+                the different stages of criminal proceedings.
             </p>
         </div>
+
         <div class="card">
-            <h3>Litigation</h3>
+            <h3>Bail Matters</h3>
             <p>
-                Court representation and legal advocacy
-                in litigation matters.
+                Legal representation in bail matters, including
+                applications and proceedings before the relevant
+                courts.
             </p>
         </div>
+
+        <div class="card">
+            <h3>Civil Litigation</h3>
+            <p>
+                Representation in civil disputes and litigation,
+                including matters involving legal rights, claims,
+                and disputes between individuals or parties.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Constitutional & Writ Matters</h3>
+            <p>
+                Legal assistance in constitutional matters and
+                writ petitions concerning the protection and
+                enforcement of legal rights.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Family & Matrimonial Matters</h3>
+            <p>
+                Legal representation and guidance in family-related
+                disputes, including matrimonial matters and other
+                proceedings arising under family law.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Property & Land Disputes</h3>
+            <p>
+                Representation in disputes concerning property,
+                land, ownership, possession, and other related
+                legal issues.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Legal Consultation</h3>
+            <p>
+                Professional legal consultation and guidance
+                concerning legal rights, available remedies,
+                proceedings, and potential courses of action.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>General Litigation</h3>
+            <p>
+                Court representation and legal advocacy in
+                litigation matters, with a focus on providing
+                professional assistance throughout legal proceedings.
+            </p>
+        </div>
+
     </div>
+
 </section>
-<!-- PROFESSIONAL MEMBERSHIP -->
+
+
+<!-- =========================
+     PROFESSIONAL MEMBERSHIP
+========================= -->
+
 <section class="membership" id="membership">
+
     <div class="section-label">
         Professional Memberships
     </div>
+
     <h2>
         Professional Affiliations
     </h2>
+
     <div class="membership-box">
+
         <h3>
             AIL Membership
         </h3>
+
         <p>
             Professional membership and affiliation with AIL.
             The membership certificate is available for
             verification and viewing.
         </p>
-        <a class="membership-btn"
-           href="ail-membership.pdf"
-           target="_blank"
-           rel="noopener">
+
+        <a
+            class="membership-btn"
+            href="ail-membership.pdf"
+            target="_blank"
+            rel="noopener">
+
             View Membership Certificate
+
         </a>
+
     </div>
+
 </section>
-<!-- EXPERIENCE -->
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
 <section class="experience" id="experience">
+
     <div class="section-label">
         Experience
     </div>
+
     <h2>
-        Legal Practice
+        Legal Practice Built on Preparation & Advocacy
     </h2>
-    <p class="experience-text">
-        With extensive experience in legal practice, Muhammad Haroon Khan Chitrali
-        provides dedicated and effective legal representation with a strong focus
-        on criminal law and litigation. His practice involves advising and representing
-        clients in criminal matters, appearing before the courts, and developing carefully 
-        considered legal strategies based on the circumstances of each case. He is committed
-        to professional advocacy, thorough preparation, and protecting the legal rights and interests
-        of his clients throughout the legal process.
-    </p>
+
+    <div class="experience-layout">
+
+        <div class="experience-intro">
+
+            <h3>
+                Professional Legal Practice
+            </h3>
+
+            <p>
+                Dedicated representation with a strong focus
+                on criminal law and litigation.
+            </p>
+
+        </div>
+
+
+        <div class="experience-text">
+
+            <p>
+                With extensive experience in legal practice,
+                Muhammad Haroon Khan Chitrali provides dedicated
+                legal representation with a strong focus on criminal
+                law and litigation.
+            </p>
+
+            <p>
+                His practice involves advising and representing
+                clients in criminal matters, appearing before the
+                courts, and developing carefully considered legal
+                strategies based on the circumstances of each case.
+            </p>
+
+            <p>
+                Professional advocacy requires more than representation
+                alone. It involves understanding the facts, identifying
+                the relevant legal issues, preparing the matter carefully,
+                and presenting the client's position effectively before
+                the appropriate forum.
+            </p>
+
+            <p>
+                The practice is committed to thorough preparation,
+                professional advocacy, and protecting the legal rights
+                and interests of clients throughout the legal process.
+            </p>
+
+
+            <div class="experience-points">
+
+                <div class="experience-point">
+                    <strong>Legal Representation</strong>
+                    <span>
+                        Professional representation and advocacy before the courts.
+                    </span>
+                </div>
+
+                <div class="experience-point">
+                    <strong>Case Preparation</strong>
+                    <span>
+                        Careful consideration of facts, law and procedural requirements.
+                    </span>
+                </div>
+
+                <div class="experience-point">
+                    <strong>Criminal Practice</strong>
+                    <span>
+                        Strong focus on criminal matters and criminal litigation.
+                    </span>
+                </div>
+
+                <div class="experience-point">
+                    <strong>Legal Guidance</strong>
+                    <span>
+                        Practical advice concerning legal rights and available remedies.
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- CONTACT -->
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section class="contact" id="contact">
+
     <div class="section-label">
         Contact
     </div>
+
     <h2>
         Get in Touch
     </h2>
+
     <div class="contact-grid">
+
         <div>
+
             <div class="contact-item">
-                <strong>Office Address</strong>
+
+                <strong>
+                    Office Address
+                </strong>
+
                 <span>
                     Flat 22/6, Alfaisal Town, C Block,
                     Near Askari 9, Zarar Shaheed Road, Lahore.
                 </span>
+
+                <br>
+
+              <a
+    class="map-link"
+    href="https://www.google.com/maps/search/?api=1&query=Wahid+Musa+Law+Associates%2C+Lahore%2C+Pakistan"
+    target="_blank"
+    rel="noopener">
+
+    View Office on Google Maps →
+
+</a>
+
             </div>
+
+
             <div class="contact-item">
-                <strong>Phone / WhatsApp</strong>
+
+                <strong>
+                    Phone / WhatsApp
+                </strong>
+
                 <a href="tel:+923008499920">
                     +92 300 8499920
                 </a>
+
             </div>
+
         </div>
+
+
         <div>
+
             <div class="contact-item">
-                <strong>Email</strong>
+
+                <strong>
+                    Email
+                </strong>
+
                 <a href="mailto:haroonchitraliadv@gmail.com">
                     haroonchitraliadv@gmail.com
                 </a>
+
             </div>
+
+
             <div class="contact-item">
-                <strong>WhatsApp</strong>
+
+                <strong>
+                    WhatsApp
+                </strong>
+
                 <a href="https://wa.me/923008499920">
                     Start a WhatsApp Conversation
                 </a>
+
             </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Discuss Your Legal Matter
+                </h3>
+
+                <p>
+                    Contact the office for professional legal consultation
+                    and information regarding your matter.
+                </p>
+
+                <a
+                    class="contact-button"
+                    href="tel:+923008499920">
+
+                    Call Now
+
+                </a>
+
+                <a
+                    class="contact-button"
+                    href="https://wa.me/923008499920">
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
-<!-- FOOTER -->
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    © 2026 Muhammad Haroon Khan Chitrali — Advocate High Court.
+
+    ©️ 2026 Muhammad Haroon Khan Chitrali — Advocate High Court.
     All Rights Reserved.
+
 </footer>
-<!-- FLOATING WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/923008499920"
-   aria-label="WhatsApp">
-    ☎
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/923008499920"
+    aria-label="WhatsApp">
+
+    WA
+
 </a>
+
 </body>
 </html>
