@@ -687,6 +687,50 @@ footer {
     }
 }
 
+
+/* =========================
+   LEGAL ENQUIRY + AI ASSISTANT
+========================= */
+.enquiry-section { background:#0a1828; color:#fff; }
+.enquiry-section h2 { color:#fff; }
+.enquiry-intro { max-width:760px; color:#cbd3dc; margin-bottom:28px; }
+.enquiry-layout { display:grid; grid-template-columns:1.1fr .9fr; gap:35px; align-items:start; }
+.enquiry-form { background:#fff; color:#222; padding:32px; border-top:3px solid #d4af6a; box-shadow:0 15px 35px rgba(0,0,0,.16); }
+.enquiry-form label { display:block; font-weight:700; color:#0a1828; font-size:14px; margin:0 0 7px; }
+.enquiry-form input, .enquiry-form select, .enquiry-form textarea { width:100%; border:1px solid #d8d8d8; background:#fff; padding:13px 14px; margin-bottom:17px; font:inherit; border-radius:3px; color:#222; }
+.enquiry-form input:focus, .enquiry-form select:focus, .enquiry-form textarea:focus { outline:2px solid #d4af6a; border-color:#b08a45; }
+.enquiry-form textarea { min-height:145px; resize:vertical; }
+.enquiry-form button { border:0; cursor:pointer; font:inherit; }
+.form-note { color:#666; font-size:12px; line-height:1.55; margin-top:13px; }
+.form-status { margin-top:14px; font-weight:700; font-size:14px; overflow-wrap:anywhere; }
+.enquiry-side { border:1px solid rgba(212,175,106,.35); padding:30px; background:rgba(255,255,255,.025); }
+.enquiry-side h3 { font:26px Georgia,serif; color:#d4af6a; margin-bottom:12px; }
+.enquiry-side p, .enquiry-side li { color:#d8dee5; margin-bottom:12px; }
+.enquiry-side ul { padding-left:20px; }
+.ai-launcher { position:fixed; right:24px; bottom:94px; z-index:3000; border:0; border-radius:999px; padding:14px 19px; background:#d4af6a; color:#0a1828; font-weight:800; cursor:pointer; box-shadow:0 7px 24px rgba(0,0,0,.25); }
+.ai-launcher:hover { transform:translateY(-2px); }
+.ai-panel { position:fixed; right:24px; bottom:158px; width:min(390px,calc(100vw - 28px)); height:min(570px,calc(100vh - 190px)); background:#fff; color:#222; border:1px solid #d4af6a; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.3); z-index:3001; display:none; overflow:hidden; flex-direction:column; }
+.ai-panel.open { display:flex; }
+.ai-header { background:#0a1828; color:#fff; padding:16px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.ai-header strong { font:20px Georgia,serif; }
+.ai-header small { display:block; color:#d4af6a; font-size:12px; margin-top:3px; }
+.ai-close { background:transparent; color:#fff; border:0; font-size:25px; cursor:pointer; padding:0 5px; }
+.ai-messages { flex:1; overflow:auto; padding:15px; background:#f8f7f3; display:flex; flex-direction:column; gap:12px; }
+.ai-message { max-width:90%; white-space:pre-wrap; overflow-wrap:anywhere; padding:11px 13px; border-radius:10px; font-size:14px; line-height:1.55; }
+.ai-message.bot { align-self:flex-start; background:#fff; border:1px solid #e6e3dc; }
+.ai-message.user { align-self:flex-end; background:#0a1828; color:#fff; }
+.ai-compose { display:flex; gap:8px; padding:12px; border-top:1px solid #eee; background:#fff; }
+.ai-compose textarea { flex:1; min-width:0; max-height:100px; resize:vertical; border:1px solid #ddd; border-radius:8px; padding:10px; font:14px Arial,sans-serif; }
+.ai-compose button { border:0; border-radius:8px; padding:0 15px; background:#d4af6a; color:#0a1828; font-weight:800; cursor:pointer; }
+.ai-disclaimer { background:#fff; color:#777; font-size:10px; line-height:1.4; padding:0 12px 10px; }
+.ai-compose button:disabled { opacity:.55; cursor:wait; }
+@media(max-width:900px) { .enquiry-layout { grid-template-columns:1fr; } }
+@media(max-width:500px) {
+  .enquiry-form,.enquiry-side { padding:22px; }
+  .ai-launcher { right:15px; bottom:82px; padding:12px 15px; }
+  .ai-panel { right:10px; bottom:145px; width:calc(100vw - 20px); height:min(560px,calc(100vh - 170px)); }
+}
+
 </style>
 </head>
 
@@ -708,6 +752,7 @@ footer {
         <a href="#practice">Practice Areas</a>
         <a href="#membership">Memberships</a>
         <a href="#experience">Experience</a>
+        <a href="#enquiry">Legal Enquiry</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -1219,6 +1264,62 @@ footer {
 </section>
 
 
+
+<!-- =========================
+     LEGAL ENQUIRY FORM
+========================= -->
+<section class="enquiry-section" id="enquiry">
+    <div class="section-label">Legal Enquiry</div>
+    <h2>Tell Us How We Can Help</h2>
+    <p class="enquiry-intro">Send a request to the office for follow-up about a possible consultation. Please share only a brief summary at this stage; do not include passwords, identity-document numbers, confidential documents, or highly sensitive details.</p>
+
+    <div class="enquiry-layout">
+        <form class="enquiry-form" id="legalEnquiryForm">
+            <label for="enquiryName">Full name *</label>
+            <input id="enquiryName" name="name" type="text" autocomplete="name" maxlength="100" required placeholder="Your full name">
+
+            <label for="enquiryPhone">Phone / WhatsApp number *</label>
+            <input id="enquiryPhone" name="phone" type="tel" autocomplete="tel" maxlength="30" required placeholder="+92 ...">
+
+            <label for="enquiryType">Type of legal matter</label>
+            <select id="enquiryType" name="matter_type">
+                <option value="Not sure">Please select (optional)</option>
+                <option>Criminal law / defence</option>
+                <option>Bail matter</option>
+                <option>Civil litigation</option>
+                <option>Constitutional / writ matter</option>
+                <option>Family / matrimonial matter</option>
+                <option>Property / land dispute</option>
+                <option>Legal consultation</option>
+                <option>Other</option>
+            </select>
+
+            <label for="enquiryIssue">Brief description of your issue *</label>
+            <textarea id="enquiryIssue" name="issue" maxlength="2500" required placeholder="Briefly describe what kind of legal help you are looking for. Please avoid sensitive details."></textarea>
+
+            <label style="display:flex;align-items:flex-start;gap:9px;font-weight:400;line-height:1.5;">
+                <input type="checkbox" id="enquiryConsent" required style="width:auto;margin:4px 0 0;">
+                <span>I agree that this information may be sent to the law office so it can respond to my enquiry.</span>
+            </label>
+
+            <button class="btn primary" type="submit">Send Legal Enquiry</button>
+            <p class="form-note">Submitting this form does not create a lawyer-client relationship and does not guarantee representation. Please do not use this form for emergencies or urgent court deadlines.</p>
+            <p class="form-status" id="enquiryStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="enquiry-side">
+            <h3>What happens next?</h3>
+            <p>Your request is intended for the office at haroonchitraliadv@gmail.com. The office can review the enquiry and contact you if further information or a consultation is appropriate.</p>
+            <ul>
+                <li>Provide a working phone number.</li>
+                <li>Keep the initial description brief.</li>
+                <li>Do not submit confidential documents through this form.</li>
+            </ul>
+            <a class="contact-button" href="https://wa.me/923008499920" target="_blank" rel="noopener">Contact via WhatsApp</a>
+        </aside>
+    </div>
+</section>
+
 <!-- =========================
      CONTACT
 ========================= -->
@@ -1366,6 +1467,159 @@ footer {
     WA
 
 </a>
+
+
+<!-- AI legal information assistant -->
+<button class="ai-launcher" id="aiLauncher" type="button" aria-expanded="false" aria-controls="aiPanel">Ask Legal AI</button>
+<section class="ai-panel" id="aiPanel" aria-label="AI legal information assistant">
+    <div class="ai-header">
+        <div><strong>Legal Information Assistant</strong><small>General information · Not your lawyer</small></div>
+        <button class="ai-close" id="aiClose" type="button" aria-label="Close chat">×</button>
+    </div>
+    <div class="ai-messages" id="aiMessages" aria-live="polite">
+        <div class="ai-message bot">Hello. I can explain general legal concepts and help you identify questions to ask a lawyer. I cannot provide a definitive legal opinion or replace a qualified Pakistani lawyer. Please avoid sharing names of other parties, CNIC numbers, addresses, or confidential case details. How can I help?</div>
+    </div>
+    <form class="ai-compose" id="aiChatForm">
+        <textarea id="aiInput" maxlength="1500" rows="2" required aria-label="Your question" placeholder="Ask a general legal question..."></textarea>
+        <button id="aiSend" type="submit">Send</button>
+    </form>
+    <div class="ai-disclaimer">AI can make mistakes and may not know the latest law. Do not rely on this chat for urgent deadlines, court strategy, or emergencies. Do not share confidential information.</div>
+</section>
+
+<script>
+/* ========= CONFIGURATION =========
+   After deploying the Cloudflare Worker, replace the URL below with your
+   actual Worker URL, e.g. https://haroon-legal-ai.YOURNAME.workers.dev/chat
+*/
+const LEGAL_AI_ENDPOINT = "https://REPLACE-WITH-YOUR-CLOUDFLARE-WORKER.workers.dev/chat";
+
+/* Legal enquiry email delivery via FormSubmit (free tier).
+   On first submission, FormSubmit may email haroonchitraliadv@gmail.com
+   an activation link. The recipient must click it before enquiries arrive.
+*/
+const ENQUIRY_ENDPOINT = "https://formsubmit.co/ajax/haroonchitraliadv@gmail.com";
+
+document.getElementById("legalEnquiryForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = document.getElementById("enquiryStatus");
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (!form.reportValidity()) return;
+
+    status.textContent = "Sending your enquiry…";
+    submitButton.disabled = true;
+
+    const payload = {
+        name: form.elements.name.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        matter_type: form.elements.matter_type.value,
+        issue: form.elements.issue.value.trim(),
+        _subject: "New legal enquiry — haroonchitrali.site",
+        _template: "table",
+        _captcha: "true"
+    };
+
+    try {
+        const response = await fetch(ENQUIRY_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === "false" || result.success === false) {
+            throw new Error(result.message || "The form service did not accept the request.");
+        }
+        status.textContent = "Your enquiry has been sent. The office may contact you using the number provided.";
+        form.reset();
+    } catch (error) {
+        status.textContent = "Sorry, the enquiry could not be sent. Please contact the office directly at haroonchitraliadv@gmail.com or WhatsApp +92 300 8499920.";
+    } finally {
+        submitButton.disabled = false;
+    }
+});
+
+const aiLauncher = document.getElementById("aiLauncher");
+const aiPanel = document.getElementById("aiPanel");
+const aiClose = document.getElementById("aiClose");
+const aiMessages = document.getElementById("aiMessages");
+const aiChatForm = document.getElementById("aiChatForm");
+const aiInput = document.getElementById("aiInput");
+const aiSend = document.getElementById("aiSend");
+const aiHistory = [];
+
+function addAiMessage(text, type) {
+    const bubble = document.createElement("div");
+    bubble.className = "ai-message " + type;
+    bubble.textContent = text;
+    aiMessages.appendChild(bubble);
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+    return bubble;
+}
+function openAiChat() {
+    aiPanel.classList.add("open");
+    aiLauncher.setAttribute("aria-expanded", "true");
+    aiInput.focus();
+}
+function closeAiChat() {
+    aiPanel.classList.remove("open");
+    aiLauncher.setAttribute("aria-expanded", "false");
+}
+aiLauncher.addEventListener("click", () => aiPanel.classList.contains("open") ? closeAiChat() : openAiChat());
+aiClose.addEventListener("click", closeAiChat);
+
+aiChatForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const question = aiInput.value.trim();
+    if (!question) return;
+    if (question.length > 1500) {
+        addAiMessage("Please keep your question under 1,500 characters.", "bot");
+        return;
+    }
+    if (LEGAL_AI_ENDPOINT.includes("REPLACE-WITH-YOUR-CLOUDFLARE-WORKER")) {
+        addAiMessage("The AI assistant has not been connected yet. The site owner needs to deploy the secure Cloudflare Worker and add its URL to the website code.", "bot");
+        return;
+    }
+
+    addAiMessage(question, "user");
+    aiHistory.push({ role: "user", parts: [{ text: question }] });
+    aiInput.value = "";
+    aiInput.disabled = true;
+    aiSend.disabled = true;
+    const pending = addAiMessage("Thinking…", "bot");
+
+    try {
+        const response = await fetch(LEGAL_AI_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents: (() => {
+                const recent = aiHistory.slice(-10);
+                // Keep the API conversation starting with a user message.
+                if (recent.length && recent[0].role === "model") recent.shift();
+                return recent;
+            })() })
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.error || "The assistant is temporarily unavailable.");
+        const answer = (data.reply || "").trim() || "Sorry, I couldn't generate an answer. Please try again.";
+        pending.textContent = answer;
+        aiHistory.push({ role: "model", parts: [{ text: answer }] });
+        while (aiHistory.length > 10) aiHistory.shift();
+    } catch (error) {
+        pending.textContent = "Sorry, the AI assistant is temporarily unavailable. Please try again later, or contact the office directly. Do not send confidential case information through this chat.";
+    } finally {
+        aiInput.disabled = false;
+        aiSend.disabled = false;
+        aiInput.focus();
+    }
+});
+
+aiInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        aiChatForm.requestSubmit();
+    }
+});
+</script>
 
 </body>
 </html>
