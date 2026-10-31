@@ -34,6 +34,30 @@
       "url": "https://haroonchitrali.site/"
     }
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(
+        "section:not(.hero), .card, .service-card, .practice-card, .contact-item"
+    );
+
+    elements.forEach((element) => {
+        element.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach((element) => observer.observe(element));
+});
+</script>
 
 <style>
 
@@ -711,6 +735,31 @@ footer {
 @media(max-width:500px) {
   .enquiry-form,.enquiry-side { padding:22px; }
 }
+/* Scroll reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slightly staggered card animations */
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
 
 </style>
 </head>
@@ -758,6 +807,9 @@ footer {
 
         <div class="title">
             Advocate High Court
+        </div>
+        <div class="association-name">
+             Haroon Chitrali's Law Association
         </div>
 
         <p>
