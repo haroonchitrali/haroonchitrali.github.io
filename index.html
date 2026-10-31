@@ -760,6 +760,52 @@ footer {
         transition: none;
     }
 }
+/* Education Section */
+.education-section {
+    padding: 60px 20px;
+    background: #f8f7f3;
+}
+
+.education-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 750px;
+    margin: 35px auto 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 5px solid rgba(212, 175, 106, 0.3);
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    border-color: #d5a243;
+}
+
+.education-icon {
+    font-size: 32px;
+    color: #0c0c0c;
+}
+
+.education-details h3 {
+    color: #0b0b0b;
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.education-details p {
+    color: #000000;
+    margin: 0;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .education-card {
+        padding: 22px;
+    }
+}
 
 </style>
 </head>
@@ -1053,6 +1099,27 @@ footer {
 
 </section>
 
+
+<!-- Education Section -->
+<section class="education-section" id="education">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Academic Background</span>
+            <h2>Education</h2>
+        </div>
+
+        <div class="education-card">
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <div class="education-details">
+                <h3>University of Karachi</h3>
+                <p>Karachi, Pakistan</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- =========================
      PRACTICE AREAS
