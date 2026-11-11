@@ -242,7 +242,7 @@ const API_ENDPOINT = "https://lucky-breeze-1876.abdulwahiddd801.workers.dev/chat
     const message = input.value.trim();
     if (!message || busy) return;
 
-    if (API_ENDPOINT.includes("REPLACE-WITH-YOUR-WORKER") || !/^https:\/\/[a-z0-9-]+\.workers\.dev\/chat$/i.test(API_ENDPOINT)) {
+    if (API_ENDPOINT.includes("REPLACE-WITH-YOUR-WORKER") || !/^https:\/\/(?:[a-z0-9-]+\.)+workers\.dev\/chat$/i.test(API_ENDPOINT)) {
       addMessage("The assistant has not been connected yet. Please contact the office directly by WhatsApp or email.", "bot");
       return;
     }
