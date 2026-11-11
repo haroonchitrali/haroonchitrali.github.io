@@ -11,7 +11,7 @@
 (() => {
   "use strict";
 
- const API_ENDPOINT = "https://haroon-legal-ai.abdulwahiddd801.workers.dev/chat";
+const API_ENDPOINT = "https://lucky-breeze-1876.abdulwahiddd801.workers.dev/chat";
   const BRAND = {
     name: "Haroon Chitrali",
     subtitle: "AI Legal Information Assistant",
