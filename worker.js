@@ -1,20 +1,22 @@
+
 /**
  * Haroon Chitrali Legal Information Assistant
- * Cloudflare Worker backend for the website chat widget.
+ * Cloudflare Worker backend
  *
- * Required Worker secret:
- *   GEMINI_API_KEY = Google AI Studio API key (store as a Secret)
+ * Required Cloudflare Worker secret:
+ * GEMINI_API_KEY
  *
- * Optional plain-text variable:
- *   GEMINI_MODEL = gemini-2.5-flash-lite
+ * Model: gemini-3.8-flash
  *
- * Never place the Gemini API key in chat-widget.js or a public GitHub repo.
+ * Never expose the API key in frontend JavaScript or GitHub.
  */
 
 const ALLOWED_ORIGINS = new Set([
   "https://haroonchitrali.site",
   "https://www.haroonchitrali.site"
 ]);
+
+const GEMINI_MODEL = "gemini-3.8-flash";
 
 const SYSTEM_INSTRUCTION = `
 You are the website's general legal information assistant for Muhammad Haroon Khan Chitrali, Advocate High Court, in Lahore, Pakistan.
@@ -66,6 +68,7 @@ function corsHeaders(origin) {
   if (ALLOWED_ORIGINS.has(origin)) {
     headers["Access-Control-Allow-Origin"] = origin;
   }
+
   return headers;
 }
 
@@ -82,7 +85,9 @@ export default {
     const url = new URL(request.url);
 
     if (!ALLOWED_ORIGINS.has(origin)) {
-      return json({ error: "This website is not authorised to use the assistant." }, 403, origin);
+      return json({
+        error: "This website is not authorised to use the assistant."
+      }, 403, origin);
     }
 
     if (request.method === "OPTIONS") {
@@ -101,45 +106,79 @@ export default {
     }
 
     if (!env.GEMINI_API_KEY) {
-      return json({ error: "The AI assistant has not been configured yet." }, 503, origin);
+      console.error("Missing GEMINI_API_KEY secret.");
+
+      return json({
+        error: "The AI assistant has not been configured yet."
+      }, 503, origin);
     }
 
-    const declaredLength = Number(request.headers.get("Content-Length") || 0);
+    const declaredLength = Number(
+      request.headers.get("Content-Length") || 0
+    );
+
     if (declaredLength > 18000) {
-      return json({ error: "That message is too large. Please shorten it." }, 413, origin);
+      return json({
+        error: "That message is too large. Please shorten it."
+      }, 413, origin);
     }
 
     let rawBody;
+
     try {
       rawBody = await request.text();
+
       if (rawBody.length > 18000) {
-        return json({ error: "That message is too large. Please shorten it." }, 413, origin);
+        return json({
+          error: "That message is too large. Please shorten it."
+        }, 413, origin);
       }
-    } catch {
-      return json({ error: "Could not read the request." }, 400, origin);
+    } catch (error) {
+      console.error("Request reading error:", error);
+
+      return json({
+        error: "Could not read the request."
+      }, 400, origin);
     }
 
     let body;
+
     try {
       body = JSON.parse(rawBody);
     } catch {
-      return json({ error: "Please send a valid chat request." }, 400, origin);
+      return json({
+        error: "Please send a valid chat request."
+      }, 400, origin);
     }
 
-    if (!Array.isArray(body.contents) || body.contents.length < 1 || body.contents.length > 10) {
-      return json({ error: "Please start a new chat and try again." }, 400, origin);
+    if (
+      !Array.isArray(body.contents) ||
+      body.contents.length < 1 ||
+      body.contents.length > 10
+    ) {
+      return json({
+        error: "Please start a new chat and try again."
+      }, 400, origin);
     }
 
     const contents = [];
     let previousRole = null;
 
     for (const item of body.contents) {
-      if (!item || !["user", "model"].includes(item.role) || !Array.isArray(item.parts)) {
-        return json({ error: "The chat message format is invalid." }, 400, origin);
+      if (
+        !item ||
+        !["user", "model"].includes(item.role) ||
+        !Array.isArray(item.parts)
+      ) {
+        return json({
+          error: "The chat message format is invalid."
+        }, 400, origin);
       }
 
       if (item.role === previousRole) {
-        return json({ error: "The chat history is invalid. Please start a new chat." }, 400, origin);
+        return json({
+          error: "The chat history is invalid. Please start a new chat."
+        }, 400, origin);
       }
 
       const combined = item.parts
@@ -149,29 +188,40 @@ export default {
         .join("\n");
 
       if (!combined || combined.length > 1500) {
-        return json({ error: "Each message must contain 1–1,500 characters." }, 400, origin);
+        return json({
+          error: "Each message must contain 1–1,500 characters."
+        }, 400, origin);
       }
 
       contents.push({
         role: item.role,
         parts: [{ text: combined }]
       });
+
       previousRole = item.role;
     }
 
-    if (contents[0].role !== "user" || contents[contents.length - 1].role !== "user") {
-      return json({ error: "Please start a new chat and try again." }, 400, origin);
+    if (
+      contents[0].role !== "user" ||
+      contents[contents.length - 1].role !== "user"
+    ) {
+      return json({
+        error: "Please start a new chat and try again."
+      }, 400, origin);
     }
 
     try {
-      const model = env.GEMINI_MODEL || "gemini-2.5-flash-lite";
       const endpoint =
-        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 25000);
+
+      const timeout = setTimeout(() => {
+        controller.abort();
+      }, 30000);
 
       let apiResponse;
+
       try {
         apiResponse = await fetch(endpoint, {
           method: "POST",
@@ -185,8 +235,10 @@ export default {
             },
             contents,
             generationConfig: {
-              temperature: 0.3,
-              maxOutputTokens: 650
+              maxOutputTokens: 1000,
+              thinkingConfig: {
+                thinkingLevel: "LOW"
+              }
             }
           }),
           signal: controller.signal
@@ -198,27 +250,50 @@ export default {
       const data = await apiResponse.json().catch(() => ({}));
 
       if (!apiResponse.ok) {
+        console.error("Gemini API error:", {
+          status: apiResponse.status,
+          details: data.error || data
+        });
+
+        if (apiResponse.status === 429) {
+          return json({
+            error: "The AI usage limit may have been reached. Please try again later or contact the office directly."
+          }, 429, origin);
+        }
+
         return json({
-          error: apiResponse.status === 429
-            ? "The free AI usage limit may have been reached. Please try again later or contact the office directly."
-            : "The AI assistant is temporarily unavailable. Please try again later."
-        }, apiResponse.status === 429 ? 429 : 502, origin);
+          error: "The AI assistant is temporarily unavailable. Please try again later."
+        }, 502, origin);
       }
 
       const reply = (data.candidates || [])
         .flatMap(candidate => candidate.content?.parts || [])
-        .map(part => typeof part.text === "string" ? part.text : "")
+        .map(part =>
+          typeof part.text === "string" ? part.text : ""
+        )
         .join("\n")
         .trim();
 
       if (!reply) {
-        return json({ error: "The assistant could not prepare an answer. Please try again." }, 502, origin);
+        console.error(
+          "Gemini returned no text:",
+          JSON.stringify(data).slice(0, 3000)
+        );
+
+        return json({
+          error: "The assistant could not prepare an answer. Please try again."
+        }, 502, origin);
       }
 
       return json({ reply }, 200, origin);
-    } catch {
+
+    } catch (error) {
+      console.error("Worker/Gemini connection error:", error);
+
       return json({
-        error: "The AI assistant is taking too long to respond. Please try again."
+        error: error.name === "AbortError"
+          ? "The AI assistant is taking too long to respond. Please try again."
+          : "The AI assistant is temporarily unavailable. Please try again later."
       }, 502, origin);
     }
   }
